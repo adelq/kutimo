@@ -1,5 +1,6 @@
 $font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-// @import "bootstrap_imports";
+// @import "client/css/imports/bootstrap_imports"
+@import '{reywood:bootstrap3-sass}/bootstrap';
 
 body {
   background-color: #E9E9E9;
