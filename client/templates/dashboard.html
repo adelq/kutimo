@@ -1,0 +1,39 @@
+<template name="dashboard">
+  {{> nav}}
+
+  {{#if habits}}
+    <a href="newhabit">
+      <button class="new-habit" type="submit">New Habit</button>
+    </a>
+    <h1>Your habits</h1>
+    <ul class="habits-list">
+      {{#each habits}}
+        {{> habit}}
+      {{/each}}
+    </ul>
+  {{else}}
+    <h1 class="dashboard-good-title">You haven't entered any habits yet!</h1>
+    <p class="dashboard-good-subtitle">Add a new habit now</p>
+    <a href="newhabit">
+      <button class="dashboard-action-button" type="submit">New Habit</button>
+    </a>
+  {{/if}}
+
+  {{> footer}}
+</template>
+
+<template name="habit">
+  <li>
+    <h3>{{title}}</h3>
+    <a href="/habit/{{id}}">
+      <i class="habit-settings" aria-hidden="true"></i>
+    </a>
+    <p class="text-muted">{{description}}</p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{time}}"
+           aria-valuemin="0" aria-valuemax="{{goal}}" style="width: {{percentage habit}}%;">
+        {{time}} days
+      </div>
+    </div>
+  </li>
+</template>
