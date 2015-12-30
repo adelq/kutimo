@@ -1,0 +1,28 @@
+<template name="checkin">
+  {{> nav}}
+
+  <div class="container content">
+    {{#if habits}}
+      <h1>Continue your habits!</h1>
+      {{#each habits}}
+        {{> checkinhabit}}
+      {{/each}}
+    {{else}}
+      <img class="checkin-check" src="/img/check.png">
+      <h1 class="checkin-good-title">Looks good!</h1>
+      <p class="checkin-good-subtitle">All set for now!</p>
+    {{/if}}
+  </div>
+
+  {{> footer}}
+</template>
+
+<template name="checkinhabit">
+  <img class="checkin-image" src="{{image}}">
+  <h3 class="checkin-title">Did you {{title}}?</h3>
+  <div class="checkin-button-group btn-group">
+    <button {{action 'habitDone' 'yes'}} type="button" class="btn-primary checkin-button">Yes</button>
+    <button {{action 'habitDone' 'no'}} type="button" class="btn-danger checkin-button">No</button>
+    <button {{action 'habitDone' 'maybe'}} type="button" class="btn-default checkin-button">Maybe</button>
+  </div>
+</template>
