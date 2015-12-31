@@ -16,14 +16,21 @@ var checkinImage = function (checked) {
   }
 };
 
+var within24hours = function (lastUpdated) {
+  var now = new moment();
+  var diff = moment.duration(now.subtract(moment(lastUpdated)));
+  return diff < moment.duration(1, 'days');
+};
+
 Template.checkinhabit.events({
   'click .checkin-button': function (e) {
     e.preventDefault();
     var img = e.target.parentElement.parentElement.children[0];
     $(img).attr('src', checkinImage(e.target.textContent));
-    if (e.target.textContent === 'Yes') {
+    if (e.target.textContent === 'Yes' && !within24hours(this.lastUpdated)) {
       Habits.update(this._id, {
-        $inc: {time: 1}
+        $inc: {time: 1},
+        $set: {lastUpdated: new Date()}
       });
     }
   }
