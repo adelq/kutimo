@@ -67,11 +67,13 @@ body {
 .checkin-image {
   float: left;
   clear: both;
-  padding-right: 18px;
+  margin-right: 24px;
+  margin-top: 24px;
 }
 
 .checkin-button-group {
   @extend .btn-group;
+  margin-bottom: 16px;
 }
 
 .checkin-button {
