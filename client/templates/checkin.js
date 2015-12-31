@@ -19,6 +19,7 @@ var checkinImage = function (checked) {
 Template.checkinhabit.events({
   'click .checkin-button': function (e) {
     e.preventDefault();
-    $('.checkin-image').attr('src', checkinImage(e.target.textContent));
+    var img = e.target.parentElement.parentElement.children[0];
+    $(img).attr('src', checkinImage(e.target.textContent));
   }
 });
