@@ -21,5 +21,10 @@ Template.checkinhabit.events({
     e.preventDefault();
     var img = e.target.parentElement.parentElement.children[0];
     $(img).attr('src', checkinImage(e.target.textContent));
+    if (e.target.textContent === 'Yes') {
+      Habits.update(this._id, {
+        $inc: {time: 1}
+      });
+    }
   }
 });

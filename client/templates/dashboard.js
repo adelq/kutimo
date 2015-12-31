@@ -6,7 +6,7 @@ Template.dashboard.helpers({
 
 Template.habit.helpers({
   percentage: function () {
-    return 100;
+    return 100 * this.time / this.goal;
   }
 });
 

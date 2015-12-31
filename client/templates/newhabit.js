@@ -6,7 +6,10 @@ Template.newhabit.events({
     Habits.insert({
       title,
       description,
-      createdAt: new Date()
+      goal: 21,
+      time: 0,
+      createdAt: new Date(),
+      lastUpdated: new Date()
     });
     Router.go('/dashboard');
   }
