@@ -4,16 +4,21 @@ Template.checkin.helpers({
   }
 });
 
-Template.checkinhabit.helpers({
-  image: function (checked) {
-    if (checked === false) {
-      return '/img/notok.png';
-    } else if (checked === true) {
-      return '/img/ok.png';
-    } else if (checked === 'maybe') {
-      return '/img/attention.png';
-    } else {
-      return '/img/rating.png';
-    }
+var checkinImage = function (checked) {
+  if (checked === 'No') {
+    return '/img/notok.png';
+  } else if (checked === 'Yes') {
+    return '/img/ok.png';
+  } else if (checked === 'Maybe') {
+    return '/img/attention.png';
+  } else {
+    return '/img/rating.png';
+  }
+};
+
+Template.checkinhabit.events({
+  'click .checkin-button': function (e) {
+    e.preventDefault();
+    $('.checkin-image').attr('src', checkinImage(e.target.textContent));
   }
 });

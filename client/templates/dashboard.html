@@ -2,7 +2,7 @@
   {{> nav}}
 
 <div class="container content">
-  {{#if habits}}
+  {{#if habits.count}}
     <a href="newhabit">
       <button class="new-habit" type="submit">New Habit</button>
     </a>
@@ -33,7 +33,7 @@
     <p class="text-muted">{{description}}</p>
     <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="{{time}}"
-           aria-valuemin="0" aria-valuemax="{{goal}}" style="width: {{percentage habit}}%;">
+           aria-valuemin="0" aria-valuemax="{{goal}}" style="width: {{percentage}}%;">
         {{time}} days
       </div>
     </div>
