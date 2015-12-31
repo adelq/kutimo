@@ -9,3 +9,9 @@ Template.habit.helpers({
     return 100;
   }
 });
+
+Template.habit.events({
+  'click .delete-habit': function () {
+    Habits.remove(this._id);
+  }
+});

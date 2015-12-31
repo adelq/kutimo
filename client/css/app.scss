@@ -107,6 +107,11 @@ body {
   @extend .glyphicon, .glyphicon-cog, .pull-right;
 }
 
+.delete-habit {
+  @extend .glyphicon, .glyphicon-remove, .pull-right;
+  margin-left: 8px;
+}
+
 .new-habit {
   @extend .btn, .btn-primary;
   float: right;
