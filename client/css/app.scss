@@ -42,9 +42,9 @@ body {
   padding: 8px 18px !important;
   font-weight: bold;
   font-size: 16px;
+  border-radius: 18px;
 
   &:hover {
-    border-radius: 18px;
     background-color: #1976D2 !important;
     color: white !important;
   }
@@ -52,6 +52,24 @@ body {
   &:focus {
     color: white !important;
   }
+}
+
+// Login
+
+#login-buttons {
+  margin-top: 16px;
+}
+
+#login-buttons a {
+  color: white;
+  background-color: #20A8E9;
+  text-decoration: none;
+}
+
+#login-buttons a.additional-link {
+  padding: 6px 8px !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .content {

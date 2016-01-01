@@ -22,3 +22,5 @@ fourseven:scss
 iron:router
 reywood:bootstrap3-sass
 momentjs:moment
+accounts-password
+accounts-ui
