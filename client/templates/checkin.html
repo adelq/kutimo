@@ -5,7 +5,9 @@
     {{#if habits.count}}
       <h1>Continue your habits!</h1>
       {{#each habits}}
-        {{> checkinhabit}}
+        {{#unless within24hours lastUpdated}}
+          {{> checkinhabit}}
+        {{/unless}}
       {{/each}}
     {{else}}
       <img class="checkin-check" src="/img/check.png">

@@ -1,9 +1,3 @@
-Template.checkin.helpers({
-  habits: function () {
-    return Habits.find({});
-  }
-});
-
 var checkinImage = function (checked) {
   if (checked === 'No') {
     return '/img/notok.png';
@@ -21,6 +15,13 @@ var within24hours = function (lastUpdated) {
   var diff = moment.duration(now.subtract(moment(lastUpdated)));
   return diff < moment.duration(1, 'days');
 };
+
+Template.checkin.helpers({
+  habits: function () {
+    return Habits.find({});
+  },
+  within24hours: within24hours
+});
 
 Template.checkinhabit.events({
   'click .checkin-button': function (e) {
