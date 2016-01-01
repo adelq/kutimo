@@ -8,3 +8,9 @@ Template.habitdetails.events({
     });
   }
 });
+
+Template.habitdetails.helpers({
+  'nextReminder': function () {
+    return fibonacci(this.time);
+  }
+});

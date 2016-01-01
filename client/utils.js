@@ -10,7 +10,7 @@ Template.registerHelper('lowercase', function (n) {
   return n.toLowerCase();
 });
 
-var fibonacci = (function () {
+fibonacci = (function () {
   var memo = {};
 
   var fib = function (n) {
