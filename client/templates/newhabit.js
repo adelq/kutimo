@@ -6,6 +6,7 @@ Template.newhabit.events({
     Habits.insert({
       title,
       description,
+      user: Meteor.userId(),
       goal: 21,
       time: 0,
       createdAt: new Date(),
