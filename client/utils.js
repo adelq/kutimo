@@ -6,6 +6,10 @@ Template.registerHelper('round', function (n) {
   return Math.round(n);
 });
 
+Template.registerHelper('lowercase', function (n) {
+  return n.toLowerCase();
+});
+
 var fibonacci = (function () {
   var memo = {};
 
