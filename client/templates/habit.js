@@ -3,8 +3,9 @@ Template.habitdetails.events({
     e.preventDefault();
     var title = e.target.title.value;
     var description = e.target.description.value;
+    var goal = parseInt(e.target.goal.value);
     Habits.update(this._id, {
-      $set: {title, description}
+      $set: {title, description, goal}
     });
   }
 });
