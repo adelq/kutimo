@@ -10,7 +10,7 @@ Template.newhabit.events({
       goal: 21,
       time: 0,
       createdAt: new Date(),
-      lastUpdated: new Date()
+      lastUpdated: moment().subtract(2, 'days').toDate()
     });
     Router.go('/dashboard');
   }
