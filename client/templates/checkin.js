@@ -12,7 +12,7 @@ var checkinImage = function (checked) {
 
 var within24hours = function (lastUpdated) {
   var now = new moment();
-  var diff = moment.duration(now.subtract(moment(lastUpdated)));
+  var diff = moment.duration(now.diff(moment(lastUpdated)));
   return diff < moment.duration(1, 'days');
 };
 
